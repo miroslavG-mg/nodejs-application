@@ -24,6 +24,10 @@ resource "aws_autoscaling_group" "myapp-autoscaling" {
   launch_configuration = aws_launch_configuration.myapp-launchconfig.name
   min_size             = 1
   max_size             = 1
+  health_check_grace_period = 300
+  health_check_type = "ELB"
+  load_balancers = [aws_elb.myapp-elb.name]
+
   force_delete = true
 
   lifecycle {
