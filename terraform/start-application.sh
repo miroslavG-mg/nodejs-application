@@ -20,7 +20,7 @@ RestartSec=10
 WantedBy=multi-user.target
 EOT
 
-sudo cp api.service /etc/systemd/system/
+sudo cp myapp.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl start api
 
